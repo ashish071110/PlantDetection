@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Classification Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 >Classification Result</h1>
+        <img src="{{ img_path }}" alt="Uploaded Image" class="result-image">
+        <h2>Class: {{ class_label }}</h2>
+        <p>Confidence: {{ confidence }}</p>
+        <h3>Details:</h3>
+        <ul class="justified-list">
+            {% for detail in details %}
+                <li>{{ detail }}</li>
+            {% endfor %}
+        </ul>
+        <a href="/">Upload another image</a>
+    </div>
+</body>
+</html>
